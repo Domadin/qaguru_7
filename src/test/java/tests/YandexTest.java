@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.yandex.YandexMainPage;
 import pages.yandex.YandexResultsPage;
-
 import static com.codeborne.selenide.Selenide.open;
 
 public class YandexTest {
@@ -20,9 +19,7 @@ public class YandexTest {
 
     @Test
     public void searchSelenideInYandex() {
-        open("");
-
-        yandex.searchFor("Selenide");
+        yandex.open().searchFor("Selenide");
 
         results.shouldHaveSize(11);
         results.shouldHaveResult(0, "Selenide: лаконичные и стабильные UI тесты на Java");
